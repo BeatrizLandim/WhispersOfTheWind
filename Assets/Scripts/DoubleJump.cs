@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class DoubleJump : MonoBehaviour
 {
-    [Header("Movimentação")]
+    [Header("Segundo Pulo")]
     public float jumpForce = 10f;
 
     [Header("Ground Check")]
