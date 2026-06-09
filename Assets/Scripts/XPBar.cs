@@ -27,7 +27,7 @@ public class XPBar : MonoBehaviour
         VerificarNivel();
     }
 
-    private void AtualizarBarra()
+    public void AtualizarBarra()
     {
         float porcentagem = (float)xpAtual / xpMaximo;
         barraAtual.fillAmount = porcentagem;

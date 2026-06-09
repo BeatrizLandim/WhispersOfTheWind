@@ -6,16 +6,14 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed = 5f;
     public float jumpForce = 10f;
 
+    public bool lockFlip;
+
     // Crouch
     public Vector2 crouchSize = new Vector2(1f, 0.7f);
     public Vector2 crouchOffset = new Vector2(0f, -0.15f);
 
-    public float inputX;       // direção horizont
-
-    private Vector2 originalSize;
-    private Vector2 originalOffset;
-    private bool isCrouching = false;
-
+    public float inputX;   
+    
     // Componentes
     public Rigidbody2D rb;
     private Animator animator;
@@ -39,23 +37,17 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        box = GetComponent<BoxCollider2D>();
-
-        // Salva tamanho original do collider
-        originalSize = box.size;
-        originalOffset = box.offset;
     }
 
     void Update()
     {
-        Crouch();
+        if (estaDancando)
+            return;
+
         UpdateAnimator();
         Movement();
-        Jump();
         Attack();
-        if (estaDancando)
-            return; 
-    }
+    }  
 
     void FixedUpdate()
     {
@@ -70,12 +62,14 @@ public class PlayerMovement : MonoBehaviour
     {
         animator.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
         animator.SetBool("IsJumping", !isGrounded);
-        animator.SetBool("IsCrouching", isCrouching);
+
+        if (crouch != null)
+            animator.SetBool("IsCrouching", crouch.isCrouching);
     }
 
     private void Attack()
     {
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (Input.GetMouseButtonDown(0))
         {
             animator.SetTrigger("Attack");
 
@@ -83,16 +77,9 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void Jump()
-    {
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded && !isCrouching)
-        {
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-        }
-    }
 
     private void Movement()
-    {   
+    {
     float moveInput = Input.GetAxis("Horizontal");
     float speed = moveSpeed;
 
@@ -100,28 +87,15 @@ public class PlayerMovement : MonoBehaviour
         speed *= 0.6f;
 
     rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
+
+    if (!lockFlip)
+    {
     MirrorSprite(moveInput);
     }
+    
 
-    private void Crouch()
-    {
-        if (Input.GetKey(KeyCode.S) && isGrounded)
-        {
-            isCrouching = true;
-
-            // reduzir collider
-            box.size = crouchSize;
-            box.offset = crouchOffset;
-        }
-        else
-        {
-            isCrouching = false;
-
-            // restaurar collider
-            box.size = originalSize;
-            box.offset = originalOffset;
-        }
     }
+
 
     private void MirrorSprite(float moveInput)
     {

@@ -23,48 +23,70 @@ public class WallMovement : MonoBehaviour
 
     private float horizontalInput;
     private float controlLockTimer;
+    private int lastWallJumpDirection = 0;
 
-    [Header("Ground Check")]
-    public Transform groundCheck;
-    public float groundRadius = 0.2f;
-    private bool isGrounded;
 
     [Header("Referências")]
     private Rigidbody2D rb;
     private Animator anim;
 
+    private PlayerMovement playerMovement;
+    private SpriteRenderer spriteRenderer;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+
+        playerMovement = GetComponent<PlayerMovement>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+
     }
 
     void Update()
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
 
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, groundLayer);
+        isOnLeftWall = Physics2D.OverlapCircle(
+            wallCheckLeft.position,
+            wallCheckRadius,
+            groundLayer
+        );
 
-        isOnLeftWall = Physics2D.OverlapCircle(wallCheckLeft.position, wallCheckRadius, groundLayer);
-        isOnRightWall = Physics2D.OverlapCircle(wallCheckRight.position, wallCheckRadius, groundLayer);
+        isOnRightWall = Physics2D.OverlapCircle(
+        wallCheckRight.position,
+        wallCheckRadius,
+        groundLayer
+        );
+
+        if (isOnLeftWall)
+            spriteRenderer.flipX = true;
+
+        if (isOnRightWall)
+            spriteRenderer.flipX = false;
+
+        if (!isOnLeftWall && !isOnRightWall)
+        {
+            lastWallJumpDirection = 0;
+        }
 
         HandleWallSlide();
         HandleWallJump();
 
-        // Atualiza animação
         anim.SetBool("encostarParede", IsTouchingWall());
     }
 
     bool IsTouchingWall()
     {
-        return !isGrounded && (isOnLeftWall || isOnRightWall);
+        return !playerMovement.isGrounded &&
+           (isOnLeftWall || isOnRightWall);
     }
 
     void HandleWallSlide()
     {
         bool touchingWall = isOnLeftWall || isOnRightWall;
 
-        if (!isGrounded && touchingWall && IsPressingTowardsWall())
+        if (!playerMovement.isGrounded && touchingWall && IsPressingTowardsWall())
         {
             wallTimer += Time.deltaTime;
 
@@ -90,16 +112,26 @@ public class WallMovement : MonoBehaviour
         if (controlLockTimer > 0)
         {
             controlLockTimer -= Time.deltaTime;
-            return;
+
+        if (controlLockTimer <= 0)
+        {
+            playerMovement.lockFlip = false;
+        }
+
+        return;
         }
 
         if (Input.GetButtonDown("Jump"))
         {
-            if (!isGrounded && isOnLeftWall)
+            if (!playerMovement.isGrounded &&
+                isOnLeftWall &&
+                lastWallJumpDirection != 1)
             {
                 WallJump(1);
             }
-            else if (!isGrounded && isOnRightWall)
+                else if (!playerMovement.isGrounded &&
+                    isOnRightWall &&
+                    lastWallJumpDirection != -1)
             {
                 WallJump(-1);
             }
@@ -110,24 +142,27 @@ public class WallMovement : MonoBehaviour
     {
         wallTimer = 0;
 
-        // 🔥 FORÇA SAÍDA IMEDIATA DA PAREDE
         isOnLeftWall = false;
         isOnRightWall = false;
 
-        // 🔥 ZERA VELOCIDADE PRA NÃO HERDAR SLIDE
         rb.velocity = Vector2.zero;
 
-        // 🔥 APLICA FORÇA
-        rb.AddForce(new Vector2(wallJumpForceX * direction, wallJumpForceY), ForceMode2D.Impulse);
+        rb.AddForce(
+            new Vector2(
+                wallJumpForceX * direction,
+                wallJumpForceY
+            ),
+            ForceMode2D.Impulse
+        );
 
-        // 🔥 FLIP EXATO NO MOMENTO DO PULO
-        transform.localScale = new Vector3(direction, 1, 1);
+        spriteRenderer.flipX = direction < 0;
 
-        // 🔥 FORÇA ANIMAÇÃO A SAIR DA PAREDE
         anim.SetBool("encostarParede", false);
-        anim.SetTrigger("pulo"); // cria esse trigger no Animator
 
+        lastWallJumpDirection = direction;
         controlLockTimer = wallJumpControlLock;
+
+        playerMovement.lockFlip = true;
     }
 
     void OnDrawGizmosSelected()
@@ -138,7 +173,5 @@ public class WallMovement : MonoBehaviour
         if (wallCheckRight != null)
             Gizmos.DrawWireSphere(wallCheckRight.position, wallCheckRadius);
 
-        if (groundCheck != null)
-            Gizmos.DrawWireSphere(groundCheck.position, groundRadius);
     }
 }

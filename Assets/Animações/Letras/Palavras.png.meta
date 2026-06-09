@@ -1,0 +1,416 @@
+fileFormatVersion: 2
+guid: 5909fa84d7640b449bbc687709d91014
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 50
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Palavras_0
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 929
+        width: 443
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44257419d1b91fb4eba28cb8ef2aa334
+      internalID: -437459183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Palavras_1
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 829
+        width: 134
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f62d5cea55503049a2509a059ed3ecb
+      internalID: 898589019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Palavras_2
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 704
+        width: 220
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5061442f260e04468d4ed5c97bb1999
+      internalID: 796444784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Palavras_3
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 592
+        width: 492
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aab203fd3cf5b7b4a9209996840a0274
+      internalID: -1681143949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Palavras_4
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 479
+        width: 554
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7cf5b54ea2003345a0de08a9c8508f8
+      internalID: 1006171706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Palavras_5
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 379
+        width: 393
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ffeda86f10de30428f6ebd49de409fd
+      internalID: -814719110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Palavras_6
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 254
+        width: 585
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: daccef299743de74f9d82d47b16df127
+      internalID: -1520517034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Palavras_7
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 142
+        width: 603
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89140ea0772fc0642aa896846b2d775f
+      internalID: -1580892038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Palavras_8
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 29
+        width: 381
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5f6833dc2fd86540899156698a79445
+      internalID: 1964934325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Palavras_0: -437459183
+      Palavras_1: 898589019
+      Palavras_10: 266637900
+      Palavras_100: -1435729016
+      Palavras_101: 36671096
+      Palavras_102: 2128000739
+      Palavras_103: -1526432584
+      Palavras_104: 1907563699
+      Palavras_105: -486785538
+      Palavras_106: 2016545335
+      Palavras_107: 213854818
+      Palavras_108: -949040195
+      Palavras_109: 40673180
+      Palavras_11: -1242231039
+      Palavras_110: 1058835239
+      Palavras_111: -1620272715
+      Palavras_112: 1952026582
+      Palavras_113: 376878480
+      Palavras_114: 405451584
+      Palavras_115: 8646305
+      Palavras_12: -130073638
+      Palavras_13: -1813721279
+      Palavras_14: 823695389
+      Palavras_15: 621829811
+      Palavras_16: -1723143144
+      Palavras_17: -150771625
+      Palavras_18: 1981397334
+      Palavras_19: 1895798881
+      Palavras_2: 796444784
+      Palavras_20: -2051175967
+      Palavras_21: -770303165
+      Palavras_22: 131222313
+      Palavras_23: -1475456148
+      Palavras_24: 1194037544
+      Palavras_25: -1539909257
+      Palavras_26: 1036382027
+      Palavras_27: 609955485
+      Palavras_28: -1622742545
+      Palavras_29: -1935449930
+      Palavras_3: -1681143949
+      Palavras_30: 526702006
+      Palavras_31: -626174454
+      Palavras_32: 28784567
+      Palavras_33: 1796420536
+      Palavras_34: 156625993
+      Palavras_35: -376135315
+      Palavras_36: -806784775
+      Palavras_37: 375924162
+      Palavras_38: 1440422391
+      Palavras_39: -781903158
+      Palavras_4: 1006171706
+      Palavras_40: 121997758
+      Palavras_41: -1139209429
+      Palavras_42: 398520402
+      Palavras_43: 879536686
+      Palavras_44: 363331557
+      Palavras_45: 1785802785
+      Palavras_46: 1538391641
+      Palavras_47: 871646298
+      Palavras_48: 1814106289
+      Palavras_49: -2137138451
+      Palavras_5: -814719110
+      Palavras_50: -1609076176
+      Palavras_51: 754091825
+      Palavras_52: -1485911560
+      Palavras_53: 1669200179
+      Palavras_54: -1056667182
+      Palavras_55: 1805844223
+      Palavras_56: -1662059649
+      Palavras_57: 258320839
+      Palavras_58: 357266448
+      Palavras_59: -1133704597
+      Palavras_6: -1520517034
+      Palavras_60: 1056909995
+      Palavras_61: 1554430735
+      Palavras_62: 867369238
+      Palavras_63: 100112695
+      Palavras_64: 298825879
+      Palavras_65: 413228457
+      Palavras_66: -1545665265
+      Palavras_67: -1064650300
+      Palavras_68: -729320034
+      Palavras_69: -628157526
+      Palavras_7: -1580892038
+      Palavras_70: 168107498
+      Palavras_71: 211838287
+      Palavras_72: 555248811
+      Palavras_73: -1357915853
+      Palavras_74: 254560201
+      Palavras_75: -958461799
+      Palavras_76: 597000658
+      Palavras_77: 1510723357
+      Palavras_78: 872406266
+      Palavras_79: -278776337
+      Palavras_8: 1964934325
+      Palavras_80: 2034234653
+      Palavras_81: -972531656
+      Palavras_82: -1761217925
+      Palavras_83: 398652161
+      Palavras_84: -1476243240
+      Palavras_85: -35073361
+      Palavras_86: 1586380398
+      Palavras_87: -356247003
+      Palavras_88: -720611884
+      Palavras_89: -348564813
+      Palavras_9: 1244553737
+      Palavras_90: 914644687
+      Palavras_91: 212571345
+      Palavras_92: -419288477
+      Palavras_93: -1948983542
+      Palavras_94: 735392300
+      Palavras_95: -1082404287
+      Palavras_96: 503428806
+      Palavras_97: 365313225
+      Palavras_98: -877813743
+      Palavras_99: 581559938
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

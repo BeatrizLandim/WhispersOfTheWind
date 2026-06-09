@@ -13,20 +13,26 @@ public class DoubleJump : MonoBehaviour
     private Rigidbody2D rb;
     private int jumpCount;
     public int maxJumps = 2; //quantidade de pulos
-        bool estavaParado = true;
+    bool estavaParado = true;
+
+    private PlayerMovement playerMovement;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        playerMovement = GetComponent<PlayerMovement>();
     }
 
     void Update()
     {
         Move();
         Jump();
-        CheckGround();
-    }
 
+        if (playerMovement.isGrounded)
+        {
+            jumpCount = 0;
+        }
+    }
 
 
     void Move()
@@ -63,15 +69,6 @@ public class DoubleJump : MonoBehaviour
         }
     }
 
-    void CheckGround()
-    {
-        bool isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, groundLayer);
-
-        if (isGrounded)
-        {
-            jumpCount = 0; // reseta quando toca no chão
-        }
-    }
 
     void OnDrawGizmosSelected()
     {
