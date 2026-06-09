@@ -73,7 +73,7 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.SetTrigger("Attack");
 
-            AudioManager.Instance.Play("ataque");
+            AudioManager.Instance.Play("Ataque");
         }
     }
 

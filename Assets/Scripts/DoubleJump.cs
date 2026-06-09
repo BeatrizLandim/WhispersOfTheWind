@@ -59,7 +59,7 @@ public class DoubleJump : MonoBehaviour
             {
                 if (jumpCount == 0)
                 {
-                    AudioManager.Instance.Play("pular");
+                    AudioManager.Instance.Play("Pulo");
                 }
 
                 rb.velocity = new Vector2(rb.velocity.x, 0f);
