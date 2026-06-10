@@ -9,7 +9,6 @@ public class TrocarImagens : MonoBehaviour
 
     public Sprite imagem1;
     public Sprite imagem2;
-    public Sprite imagem3;
 
     public float tempoEntreImagens = 10f;
     public float tempoMenu = 60f;
@@ -22,12 +21,11 @@ public class TrocarImagens : MonoBehaviour
     IEnumerator SequenciaImagens()
     {
         imagemUI.sprite = imagem1;
+        imagemUI.rectTransform.sizeDelta = new Vector2(1536, 1024);
         yield return new WaitForSeconds(tempoEntreImagens);
 
         imagemUI.sprite = imagem2;
-        yield return new WaitForSeconds(tempoEntreImagens);
-
-        imagemUI.sprite = imagem3;
+        imagemUI.rectTransform.sizeDelta = new Vector2(1412, 1114);
         yield return new WaitForSeconds(tempoMenu);
 
         SceneManager.LoadScene("Menu");

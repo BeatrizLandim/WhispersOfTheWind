@@ -9425,6 +9425,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &726448379 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4178701586991482325, guid: cad8d026636249b42bf1f1d3708e1d1c, type: 3}
+  m_PrefabInstance: {fileID: 910235298}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &727742990
 GameObject:
   m_ObjectHideFlags: 0
@@ -10832,6 +10837,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7462591191988310224, guid: d6fe6737c3d28ba43a9731d9345baf80, type: 3}
+      propertyPath: jogador
+      value: 
+      objectReference: {fileID: 726448379}
     - target: {fileID: 7462591191988310225, guid: d6fe6737c3d28ba43a9731d9345baf80, type: 3}
       propertyPath: m_Name
       value: Main Camera
