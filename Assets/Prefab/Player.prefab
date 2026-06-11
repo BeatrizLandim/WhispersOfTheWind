@@ -121,6 +121,7 @@ GameObject:
   - component: {fileID: 4178701586991482328}
   - component: {fileID: 4178701586991482330}
   - component: {fileID: 4178701586991482341}
+  - component: {fileID: 6128715386805805917}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -146,6 +147,7 @@ Transform:
   - {fileID: 4178701587530154275}
   - {fileID: 2179793803384457030}
   - {fileID: 8992654872949949455}
+  - {fileID: 4978521655341396829}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -234,6 +236,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47eb0022c0819b5418e53639635bc1d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fireballPrefab: {fileID: 0}
+  shootPosition: {fileID: 0}
+  shootCooldown: 0.5
   moveSpeed: 8
   jumpForce: 8
   lockFlip: 0
@@ -241,6 +246,7 @@ MonoBehaviour:
   crouchOffset: {x: -0.00350824, y: -0.1048099}
   inputX: 0
   rb: {fileID: 4178701586991482322}
+  cooldownAtaque2: 5
   isGrounded: 1
   groundCheck: {fileID: 4178701587653698533}
   groundRadius: 0.1
@@ -340,6 +346,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpForce: 12
+  fallMultiplier: 2.5
+  lowJumpMultiplier: 2
+  coyoteTime: 0.15
   groundCheck: {fileID: 4178701587653698533}
   checkRadius: 0.2
   groundLayer:
@@ -369,6 +378,21 @@ MonoBehaviour:
   wallJumpForceX: 10
   wallJumpForceY: 13
   wallJumpControlLock: 0.15
+--- !u!114 &6128715386805805917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4178701586991482325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c2172e422133184bbcd5d9554088799, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitbox1: {fileID: 0}
+  hitbox2: {fileID: 0}
+  hitbox3: {fileID: 0}
 --- !u!1 &4178701587530154272
 GameObject:
   m_ObjectHideFlags: 0
@@ -530,6 +554,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   danoJogador: 50
+--- !u!1 &4693302081793191247
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4978521655341396829}
+  m_Layer: 0
+  m_Name: ShootPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4978521655341396829
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4693302081793191247}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.171, y: -0.119, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4178701586991482324}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8951575922234595166
 GameObject:
   m_ObjectHideFlags: 0

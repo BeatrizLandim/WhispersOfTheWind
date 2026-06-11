@@ -5,6 +5,15 @@ public class DoubleJump : MonoBehaviour
     [Header("Segundo Pulo")]
     public float jumpForce = 10f;
 
+    [Header("Peso do Pulo")]
+    public float fallMultiplier = 2.5f;
+    public float lowJumpMultiplier = 2f;
+
+    [Header("Coyote Time")]
+    public float coyoteTime = 0.15f;
+    private float coyoteCounter;
+
+
     [Header("Ground Check")]
     public Transform groundCheck;
     public float checkRadius = 0.2f; 
@@ -25,8 +34,19 @@ public class DoubleJump : MonoBehaviour
 
     void Update()
     {
+        ApplyJumpWeight();
         Move();
         Jump();
+
+        if (playerMovement.isGrounded)
+        {
+            coyoteCounter = coyoteTime;
+            jumpCount = 0;
+        }
+        else
+        {
+            coyoteCounter -= Time.deltaTime;
+        }
 
         if (playerMovement.isGrounded)
         {
@@ -41,7 +61,7 @@ public class DoubleJump : MonoBehaviour
 
             if (horizontal != 0 && estavaParado)
         {
-            AudioManager.Instance.Play("andar");
+            AudioManager.Instance.Play("Andar");
             estavaParado = false;
         }
 
@@ -55,15 +75,24 @@ public class DoubleJump : MonoBehaviour
     {
         if (Input.GetButtonDown("Jump"))
         {
-            if (jumpCount < maxJumps)
+        // Primeiro pulo
+            if ((playerMovement.isGrounded || coyoteCounter > 0) && jumpCount == 0)
             {
-                if (jumpCount == 0)
-                {
-                    AudioManager.Instance.Play("Pulo");
-                }
-
                 rb.velocity = new Vector2(rb.velocity.x, 0f);
                 rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+
+                jumpCount = 1;
+                coyoteCounter = 0;
+
+                AudioManager.Instance.Play("Pulo");
+            }
+
+        // Segundo pulo
+            else if (jumpCount < maxJumps)
+            {
+                rb.velocity = new Vector2(rb.velocity.x, 0f);
+                rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+
                 jumpCount++;
             }
         }
@@ -78,4 +107,20 @@ public class DoubleJump : MonoBehaviour
             Gizmos.DrawWireSphere(groundCheck.position, checkRadius);
         }
     }
+
+    void ApplyJumpWeight()
+    {
+        // Cai mais rápido
+        if (rb.velocity.y < 0)
+        {
+            rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
+        }
+
+            // Soltou o botão antes do topo
+        else if (rb.velocity.y > 0 && !Input.GetButton("Jump"))
+        {
+            rb.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
+        }
+    }
+
 }

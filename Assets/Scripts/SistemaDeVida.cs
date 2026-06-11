@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class SistemaDeVida : MonoBehaviour
 {
     public BarraDeVida barraDeVida;
+    public SeguirJogador cameraFollow;
 
     [Range(0, 100)] public float vidaMaxima = 100f;
     [Range(0, 100)] public float vidaAtual;
@@ -19,7 +20,6 @@ public class SistemaDeVida : MonoBehaviour
         vidaAtual = vidaMaxima;
         AtualizarVida();
 
-        // Parâmetro "Vivo" começa ativo
         if (animator != null)
             animator.SetBool("Vivo", true);
     }
@@ -28,19 +28,19 @@ public class SistemaDeVida : MonoBehaviour
     {
         if (estaMorto) return;
 
-
         vidaAtual -= dano;
 
+        // 🔥 evita bug de bloco solto
         if (animator != null)
+        {
+            AudioManager.Instance.Play("Dano");
             StartCoroutine(AnimacaoMachucado());
-            AudioManager.Instance.Play("dano"); // toca só no início
-
+        }
 
         AtualizarVida();
 
         if (vidaAtual <= 0)
         {
-            AudioManager.Instance.Play("dano"); // toca só no início
             Morrer();
         }
     }
@@ -50,7 +50,7 @@ public class SistemaDeVida : MonoBehaviour
         if (animator != null)
         {
             animator.SetBool("Machucado", true);
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.2f);
             animator.SetBool("Machucado", false);
         }
     }
@@ -65,20 +65,32 @@ public class SistemaDeVida : MonoBehaviour
     {
         if (estaMorto) return;
         estaMorto = true;
-        AudioManager.Instance.Play("morte");
 
-
+        // 🚨 garante que animação de morte não seja interrompida
         if (animator != null)
+        {
             animator.SetBool("Vivo", false);
+            animator.SetBool("Machucado", false);
+            animator.speed = 1f;
+        }
 
-        StartCoroutine(ReiniciarCena());
+        StartCoroutine(ReiniciarJogoCompleto());
     }
 
-    private IEnumerator ReiniciarCena()
+    public IEnumerator ReiniciarJogoCompleto()
     {
-        yield return new WaitForSeconds(15f);
+        GetComponent<PlayerMovement>().enabled = false;
+        GetComponent<DoubleJump>().enabled = false;
+        GetComponent<PlayerCrouch>().enabled = false;
 
-        string cenaAtual = SceneManager.GetActiveScene().name;
-        SceneManager.LoadScene(cenaAtual);
+        AudioManager.Instance.StopCurrentMusic();
+        AudioManager.Instance.Play("Morte");
+
+        yield return new WaitForSeconds(14.5f);
+
+        // ⚠️ debug antigo removido (estava errado)
+        Destroy(AudioManager.Instance.gameObject);
+
+        SceneManager.LoadScene(0, LoadSceneMode.Single);
     }
 }

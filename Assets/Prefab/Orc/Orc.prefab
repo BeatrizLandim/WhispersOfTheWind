@@ -170,6 +170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   barraDeVida: {fileID: 0}
+  cameraFollow: {fileID: 0}
   vidaMaxima: 100
   vidaAtual: 0
 --- !u!1 &4334878986384137182

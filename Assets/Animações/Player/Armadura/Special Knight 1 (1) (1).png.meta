@@ -1,0 +1,266 @@
+fileFormatVersion: 2
+guid: 4e96978ae25e8fe4fa6afd88489236b6
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 30
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Special Knight 1 (1) (1)_0
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 309
+        width: 30
+        height: 24
+      alignment: 9
+      pivot: {x: 0.4666688, y: 0.5016683}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2842f0afb52483d498b7be86bbfc65e6
+      internalID: 388480847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Special Knight 1 (1) (1)_1
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 308
+        width: 28
+        height: 27
+      alignment: 9
+      pivot: {x: 0.46362633, y: 0.5923371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d57e60b8cea022488c83302db73d099
+      internalID: 86513701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Special Knight 1 (1) (1)_2
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 308
+        width: 22
+        height: 23
+      alignment: 9
+      pivot: {x: 0.4540572, y: 0.6076037}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca275dd5fa17b9f4c8e1cb6aa5c40d77
+      internalID: 388278629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Special Knight 1 (1) (1)_4
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 313
+        width: 13
+        height: 18
+      alignment: 9
+      pivot: {x: 0.6169258, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba566a41e35f06f4b96fbd203f832b5b
+      internalID: -1169904899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Special Knight 1 (1) (1)_5
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 312
+        width: 19
+        height: 18
+      alignment: 9
+      pivot: {x: 0.31530118, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 761e2f25d232d4a449e89ca52dfcd9b7
+      internalID: 1244487504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Special Knight 1 (1) (1)_6
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 312
+        width: 13
+        height: 18
+      alignment: 9
+      pivot: {x: 0.463082, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23cd98d5c981d82449892e5a180e4567
+      internalID: 1435459971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Special Knight 1 (1) (1)_7
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 312
+        width: 13
+        height: 18
+      alignment: 9
+      pivot: {x: 0.463082, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d95a48e7ddf8c1942b432d42380b9101
+      internalID: -1221768915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Special Knight 1 (1) (1)_0: 388480847
+      Special Knight 1 (1) (1)_1: 86513701
+      Special Knight 1 (1) (1)_2: 388278629
+      Special Knight 1 (1) (1)_3: 1521652630
+      Special Knight 1 (1) (1)_4: -1169904899
+      Special Knight 1 (1) (1)_5: 1244487504
+      Special Knight 1 (1) (1)_6: 1435459971
+      Special Knight 1 (1) (1)_7: -1221768915
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
