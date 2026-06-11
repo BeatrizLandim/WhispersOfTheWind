@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class InimigoArqueiro : MonoBehaviour
+public class InimigoEstatico : MonoBehaviour
 {
     [Header("Referências")]
     public Transform player;
@@ -106,8 +106,8 @@ public class InimigoArqueiro : MonoBehaviour
         {
             float direcao =
                 player.position.x > transform.position.x
-                ? 1f
-                : -1f;
+                ? 0.5f
+                : -0.5f;
 
             scriptFlecha.DefinirDirecao(direcao);
         }

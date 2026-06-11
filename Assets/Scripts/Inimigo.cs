@@ -144,7 +144,7 @@ public class Inimigo : MonoBehaviour
     // ----------------------------------------------------------
     void ControlarAtaque()
     {
-        float distancia = Vector2.Distance(transform.position, player.position);
+        float distancia = Vector2.Distance(transform.position, player.position);        
 
         if (distancia <= distanciaAtaque && vivo)
         {
@@ -164,13 +164,14 @@ public class Inimigo : MonoBehaviour
 
         float distancia = Vector2.Distance(transform.position, player.position);
         SistemaDeVida vida = player.GetComponent<SistemaDeVida>();
+        Debug.Log("Iniciando ataque: " + player);
+        Debug.Log("Iniciando ataque: " + vida);
 
         while (distancia <= distanciaAtaque && atacando && vivo)
         {
-            anim.SetTrigger("Ataque");
-
-            if (vida != null)
-                vida.AplicarDano(danoAtaque);
+            anim.SetBool("atacando", true);
+            
+            vida.AplicarDano(danoAtaque);
 
             // mantém o ataque repetido na frequência desejada
             yield return new WaitForSeconds(tempoEntreAtaques);
@@ -179,6 +180,7 @@ public class Inimigo : MonoBehaviour
         }
 
         atacando = false;
+        anim.SetBool("atacando", false);
     }
 
     // ----------------------------------------------------------

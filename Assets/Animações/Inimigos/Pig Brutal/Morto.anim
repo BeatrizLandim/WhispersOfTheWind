@@ -21,7 +21,7 @@ AnimationClip:
   - curve:
     - time: 0
       value: {fileID: -892012910, guid: f54dbfdec3e49554b92f3aca01490d03, type: 3}
-    - time: 19.9
+    - time: 6.9
       value: {fileID: 0}
     attribute: m_Sprite
     path: 
@@ -49,7 +49,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 19.916666
+    m_StopTime: 6.916667
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

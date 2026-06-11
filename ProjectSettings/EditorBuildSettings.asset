@@ -15,9 +15,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Jogo2.unity
     guid: 1bf440fe393182a4fbe6750708aa5728
   - enabled: 1
-    path: Assets/Scenes/BossFinal.unity
-    guid: e4b84354a79aecc479c2522ff2bc9f6b
-  - enabled: 1
     path: Assets/Scenes/Creditos.unity
     guid: 808bad9c2e9679a429027e76854609bc
   m_configObjects: {}

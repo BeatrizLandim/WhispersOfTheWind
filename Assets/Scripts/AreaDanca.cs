@@ -58,7 +58,7 @@ public class AreaDanca : MonoBehaviour
                 break;
 
             case "Jogo2":
-                SceneManager.LoadScene("BossFinal");
+                SceneManager.LoadScene("Creditos");
                 break;
         }
     }

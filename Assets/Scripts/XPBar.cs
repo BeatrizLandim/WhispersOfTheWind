@@ -15,6 +15,12 @@ public class XPBar : MonoBehaviour
     public bool prata = false;
     public bool ouro = false;
 
+    void Start()
+    {
+        AtualizarBarra();
+        VerificarNivel();
+    }
+
     public void GanharXP(int quantidade)
     {
         xpAtual += quantidade;

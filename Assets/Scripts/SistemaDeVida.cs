@@ -2,10 +2,10 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SistemaDeVida : MonoBehaviour
+public class SistemaDeVida : MonoBehaviour, IDamageable
 {
     public BarraDeVida barraDeVida;
-    public SeguirJogador cameraFollow;
+    //public SeguirJogador cameraFollow;
 
     [Range(0, 100)] public float vidaMaxima = 100f;
     [Range(0, 100)] public float vidaAtual;
@@ -43,6 +43,11 @@ public class SistemaDeVida : MonoBehaviour
         {
             Morrer();
         }
+    }
+
+    public void TakeDamage(int dano)
+    {
+        AplicarDano(dano);
     }
 
     private IEnumerator AnimacaoMachucado()
@@ -91,6 +96,6 @@ public class SistemaDeVida : MonoBehaviour
         // ⚠️ debug antigo removido (estava errado)
         Destroy(AudioManager.Instance.gameObject);
 
-        SceneManager.LoadScene(0, LoadSceneMode.Single);
+        SceneManager.LoadScene("Creditos", LoadSceneMode.Single);
     }
 }
